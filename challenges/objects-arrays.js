@@ -164,10 +164,12 @@ The zoos need to know their total animal population across the United States.
 Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
+/*
 const populationTotal = 0;
 const reducer = (accumulator, currentValue) => ({population: accumulator.population + currentValue.population});
 populationTotal = zooAnimals.reduce(reducer).population;
 console.log(populationTotal);
+*/
 /*DUE TO FORCING CONST ONLY AND NO LETTING MODIFY THE VALUE OF THE ZERO FAIL MBP*/
 /*
 let populationTotal = 0; // I haver to change this to let or there is no way to do this one...
@@ -175,6 +177,37 @@ const reducer = (accumulator, currentValue) => ({population: accumulator.populat
 populationTotal = zooAnimals.reduce(reducer).population;
 console.log(populationTotal);
 */
+
+/*THIS CODE WORKS JUST FINE*/
+let populationTotal = 0;
+const reducer = (accumulator, currentValue) => ({population: accumulator.population + currentValue.population});
+populationTotal = zooAnimals.reduce(reducer).population;
+console.log(populationTotal);
+/*BUT acording to TL we need to change the value fo a const number*/
+/*
+I know of no way to do this becaue the whole point of a CONST is YOU CAN NOT CHANGE IT, in this case it is hard coded to 0
+I could console.log the reduce but that is still not changing the calu of the constant with reduce.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+the documentation on reduce say nothing about it bodifying constants.
+*/
+
+/*THIS ALSO WORKS*/
+let populationTotal2 = 0;
+populationTotal2 = zooAnimals.reduce( function(accumulator, currentValue) {
+  return accumulator + currentValue.population;
+}, 0);
+console.log(populationTotal2);
+/*
+BUT SAME PROBLEM the use of var = array.reduce can not be used when the var is a constant type, It wont let the change be made.
+
+/*THIS WOULD ALSO WORK*/
+const reducer2 = (accumulator, currentValue) => ({population: accumulator.population + currentValue.population});
+const populationTotal3 = zooAnimals.reduce(reducer2).population;
+console.log(populationTotal3);
+/*
+But this is cheating because I am not changing the value of the zero, but that is the only way I can think of to do this using a const.
+*/
+
 
 /*
 
