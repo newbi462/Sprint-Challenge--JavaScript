@@ -179,10 +179,10 @@ console.log(populationTotal);
 */
 
 /*THIS CODE WORKS JUST FINE*/
-let populationTotal = 0;
+let populationTotal4 = 0;
 const reducer = (accumulator, currentValue) => ({population: accumulator.population + currentValue.population});
 populationTotal = zooAnimals.reduce(reducer).population;
-console.log(populationTotal);
+console.log(populationTotal4);
 /*BUT acording to TL we need to change the value fo a const number*/
 /*
 I know of no way to do this becaue the whole point of a CONST is YOU CAN NOT CHANGE IT, in this case it is hard coded to 0
@@ -207,6 +207,14 @@ console.log(populationTotal3);
 /*
 But this is cheating because I am not changing the value of the zero, but that is the only way I can think of to do this using a const.
 */
+
+/*OK NOW WE CAN TOUCH THE starting code to fic this*/
+//so a reformeated for MVP
+const populationTotal = zooAnimals.reduce( function(accumulator, currentValue) {
+  return accumulator + currentValue.population;
+}, 0);
+console.log(populationTotal);
+/*leaving the above as the arrow funtions are a stretch goal*/
 
 
 /*
