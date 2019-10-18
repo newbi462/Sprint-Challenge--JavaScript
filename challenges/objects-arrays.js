@@ -169,6 +169,12 @@ const reducer = (accumulator, currentValue) => ({population: accumulator.populat
 populationTotal = zooAnimals.reduce(reducer).population;
 console.log(populationTotal);
 /*DUE TO FORCING CONST ONLY AND NO LETTING MODIFY THE VALUE OF THE ZERO FAIL MBP*/
+/*
+let populationTotal = 0; // I haver to change this to let or there is no way to do this one...
+const reducer = (accumulator, currentValue) => ({population: accumulator.population + currentValue.population});
+populationTotal = zooAnimals.reduce(reducer).population;
+console.log(populationTotal);
+*/
 
 /*
 
