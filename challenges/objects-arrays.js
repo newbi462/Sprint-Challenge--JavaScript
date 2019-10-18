@@ -168,7 +168,7 @@ const populationTotal = 0;
 const reducer = (accumulator, currentValue) => ({population: accumulator.population + currentValue.population});
 populationTotal = zooAnimals.reduce(reducer).population;
 console.log(populationTotal);
-
+/*DUE TO FORCING CONST ONLY AND NO LETTING MODIFY THE VALUE OF THE ZERO FAIL MBP*/
 
 /*
 
