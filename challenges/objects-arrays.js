@@ -181,7 +181,7 @@ console.log(populationTotal);
 /*THIS CODE WORKS JUST FINE*/
 let populationTotal4 = 0;
 const reducer = (accumulator, currentValue) => ({population: accumulator.population + currentValue.population});
-populationTotal = zooAnimals.reduce(reducer).population;
+populationTotal4 = zooAnimals.reduce(reducer).population;
 console.log(populationTotal4);
 /*BUT acording to TL we need to change the value fo a const number*/
 /*
